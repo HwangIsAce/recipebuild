@@ -1,0 +1,34 @@
+{
+    "data_folder": {
+        "__comment__": "For /home/donghee/projects/mlm/processing/1_create_data.py /\n target_dir = {home_dir}/{processed_dir}/{ __comment2__ }/train.txt, val.txt, test.txt",
+        "__comment2__": "dir list = v1_ing_only, v1_ing_only_sample, v2_ing_title, v2_title_sample, v3_ing_title_tag",
+        "home_dir": "/disk1/data/ing_mlm_data/",
+        "original_dir": "original",
+        "deprecated_tag_dir": "/disk1/data/autorecipe/data/",
+        "processed_dir": "processed"
+    },
+
+    "bert_config": {
+        "resize_embedding": true,
+        "tokenizer": {
+            "__comment__": "train data file -> {data_folder.home_dir}/{data_folder.processed_dir}/v1_ingr_only/train.txt... etc / max_len (512) is followed by bert default setting",
+            "tokenizer_file_path": {
+                "__comment__": "Trained tokenizer files",
+                "ingr_title_tag": "/home/donghee/projects/mlm/resources/ingt_tokenizer_ingr_title_tag.json"
+            },
+            "tokenizer_train_file_path": {
+                "__comment__": "Files for tokenizer training",
+                "ingr_title_tag": "/disk1/data/ing_mlm_data/processed/v3_ing_title_tag/train.txt"
+            },
+            "vocab_max_size": 500000,
+            "special_tokens": [
+                "[UNK]",
+                "[PAD]",
+                "[CLS]",
+                "[SEP]",
+                "[MASK]"
+            ],
+            "max_len": 512
+        }
+    }
+}
